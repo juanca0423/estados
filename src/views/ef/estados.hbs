@@ -1,0 +1,120 @@
+{{#if tabla}}
+<br>
+<p>
+  Hoja de trabajo Inicial
+<p>
+<table>
+  <tr>
+    <th>nombre</th>
+    <th>debe</th>
+    <th>haber</th>
+    <th>perdidas</th>
+    <th>ganancia</th>
+    <th>activó</th>
+    <th>pasivo</th>
+  </tr>
+  {{#each hTIni}}
+    <tr>
+      <td class="{{this.clase0}}">{{this.nombre}}</td>
+      <td class="{{this.clase1}}">{{this.debe}}</td>
+      <td class="{{this.clase2}}">{{this.haber}}</td>
+      <td class="{{this.clase3}}">{{this.perdida}}</td>
+      <td class="{{this.clase4}}">{{this.ganancia}}</td>
+      <td class="{{this.clase5}}">{{this.activo}}</td>
+      <td class="{{this.clase6}}">{{this.pasivo}}</td>
+    </tr>
+  {{/each}}
+</table>
+{{/if}}
+{{#if tabla1}}
+<br>
+<p>
+  Hoja de trabajo actual
+<p>
+<table>
+  <tr>
+    <th >nombre</th>
+    <th >debe</th>
+    <th >haber</th>
+    <th >perdidas</th>
+    <th >ganancia</th>
+    <th >activó</th>
+    <th >pasivo</th>
+  </tr>
+  {{#each hTFin}}
+    <tr>
+      <td class="{{this.clase0}}">{{this.nombre}}</td>
+      <td class="{{this.clase1}}">{{this.debe}}</td>
+      <td class="{{this.clase2}}">{{this.haber}}</td>
+      <td class="{{this.clase3}}">{{this.perdida}}</td>
+      <td class="{{this.clase4}}">{{this.ganancia}}</td>
+      <td class="{{this.clase5}}">{{this.activo}}</td>
+      <td class="{{this.clase6}}">{{this.pasivo}}</td>
+    </tr>
+  {{/each}}
+</table>
+{{/if}}
+{{#if tabla2}}
+<br>
+<p>
+  Estado de Resultados
+<p>
+<table>
+  {{#each estaResuini}}
+    <tr>
+      <td class="{{this.clase0}}">{{this.nombre}}</td>
+      <td class="{{this.clase1}}">{{this.col1}}</td>
+      <td class="{{this.clase2}}">{{this.col2}}</td>
+      <td class="{{this.clase3}}">{{this.col3}}</td>
+    </tr>
+  {{/each}}
+</table>
+{{/if}}
+{{#if tabla3}}
+<br>
+<p>
+  Estado de Resultados
+<p>
+<table>
+  {{#each estaResufin}}
+    <tr>
+      <td class="{{this.clase0}}">{{this.nombre}}</td>
+      <td class="{{this.clase1}}">{{this.col1}}</td>
+      <td class="{{this.clase2}}">{{this.col2}}</td>
+      <td class="{{this.clase3}}">{{this.col3}}</td>
+    </tr>
+  {{/each}}
+</table>
+{{/if}}
+{{#if tabla2}}
+ <br>
+ <p>
+   Balance de Situacion General
+ <p>
+ <table>
+   {{#each balaGeneini}}
+     <tr>
+       <td class="{{this.clase0}}">{{this.nombre}}</td>
+       <td class="{{this.clase1}}">{{this.col1}}</td>
+       <td class="{{this.clase2}}">{{this.col2}}</td>
+       <td class="{{this.clase3}}">{{this.col3}}</td>
+     </tr>
+   {{/each}}
+ </table>
+ {{/if}}
+ {{#if tabla3}}
+ <br>
+ <p>
+   Balance de Situacion General
+ <p>
+ <table>
+   {{#each balaGenefin}}
+     <tr>
+       <td class="{{this.clase0}}">{{this.nombre}}</td>
+       <td class="{{this.clase1}}">{{this.col1}}</td>
+       <td class="{{this.clase2}}">{{this.col2}}</td>
+       <td class="{{this.clase3}}">{{this.col3}}</td>
+     </tr>
+   {{/each}}
+ </table>
+ {{/if}}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+     <title>Estados Financieros</title>
+     <meta charset="UTF-8">
+     <meta name="title" content="Estados Financieros">
+     <meta name="description" content="Descripción de la WEB">
+     <meta name="viewport" content="width-device-width, initial-scale=1.0i">
+
+     <link rel="stylesheet" href="/css/boostrap.css">
+     <!-- FONT AWESOME -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    {{> navigation }}
+    <section class="container">
+      {{> messages }}
+      {{> errors }}
+      {{{body}}}
+    </section>
+    <footer>
+      <h4>Redes sociales</h4>
+      <a href="http://facebook.com/mi-pagina-de-facebook">Mi Facebook</a>
+    </footer>
+    <script src="/js/jquery341.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <script src="/js/proper.js"></script>
+  </body>
+</html>

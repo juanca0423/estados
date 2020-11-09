@@ -1,0 +1,29 @@
+
+<div class"row">
+<form class="col-md-6 mx-auto" action="/estados" method="POST">
+  <table class="card mt-4 text-center">
+    <thead class="card-header">
+      <h1 class"h4">nomenclatura</h1>
+      <p>Ingresa tu balance de saldos tanto el anterior (Inicial) como el actual (Final)</p>
+    </thead>
+    <tbody class="card-body">
+      {{#each cuentas}}
+        <tr class="form-group">
+	  <td class="form-control">
+	    <label>{{this.nombre}}</label>
+	  </td>
+          <td class="form-control">
+            <input type="number" step="0.01" name="{{this.codigo}}ini" placeholder="Inicial" value="{{this.valor}}">
+          </td>
+          <td class="form-control">
+            <input type="number" step="0.01" name="{{this.codigo}}fin" placeholder="Final"value="{{this.valor}}">
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <button class="btn btn-primary btn-block">
+    Enviar 
+  </button>
+</form>
+</div>

@@ -1,0 +1,7 @@
+
+npm i express express-handlebars express-session method-override mongoose passport passport-local bcriptjs connect-flash
+
+cd src
+
+mkdir config helpers models public views routes
+

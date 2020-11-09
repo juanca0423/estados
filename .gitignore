@@ -1,0 +1,9 @@
+# Nodejs
+node_modules/
+src/sass/
+# npm
+package-lock.json
+*.s*
+# environment variables
+.env
+src/public/svg/
