@@ -8,4 +8,4 @@ package-lock.json
 .env
 src/public/svg/
 # doc
-doc/
+docs/
