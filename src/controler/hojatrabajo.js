@@ -48,9 +48,11 @@ htCtrl.hojadetrabajo=(n, hTIni, hTFin)=>{
     */
     let codini = parseFloat(n[`${cuentas[i].codigo}ini`]),
       codfin = parseFloat(n[`${cuentas[i].codigo}fin`]),
+      saldo=cuentas[i].saldo,
+      codigo=cuentas[i].codigo,
       nombre=cuentas[i].nombre;
     if(codini){ //si existe
-      if(cuentas[i].saldo == 'activo'){ //si es activo
+      if(saldo == 'activo'){ //si es activo
         /*
          * este es un ternario que debera
          *   ser modificado en otras
@@ -61,7 +63,7 @@ htCtrl.hojadetrabajo=(n, hTIni, hTFin)=>{
          *   diferente en la hoja de trabajo
          * ver nota 1
         */
-        (cuentas[i].codigo == '111301')?
+        (codigo == '111301')?
           htCtrl.hojaTrabActiVerd(hTIni,'ini',nombre, codini, n):
           htCtrl.hojaTrabActifals(hTIni,'ini', nombre, codini);
       }else if(cuentas[i].saldo == 'pasivo'){ //si es pasivo
@@ -75,17 +77,17 @@ htCtrl.hojadetrabajo=(n, hTIni, hTFin)=>{
          *   al arreglo
          * ver nota 1
         */
-        if(cuentas[i].codigo === '220001'){
+        if(codigo === '220001'){
         }else{
           htCtrl.hojaTrabPerd( hTIni,'ini',nombre,codini);
         };
-      }else if(cuentas[i].saldo == 'ganancia'){ // si es ganancia
+      }else if(saldo == 'ganancia'){ // si es ganancia
         /*
          * si existe el inventario final y no
          *   el inicial en contrario
          * ver nota 1
         */
-        if(cuentas[i].codigo === '220005'){
+        if(codigo === '220005'){
           if(!parseFloat(n['111301ini'])){
             htCtrl.hojaTrabGanaVerd( hTIni, 'ini', nombre, codini)
           };
@@ -95,19 +97,19 @@ htCtrl.hojadetrabajo=(n, hTIni, hTFin)=>{
       };
     };
     if(codfin){
-      if(cuentas[i].saldo == 'activo'){
-        (cuentas[i].codigo == '111301')?
+      if(saldo == 'activo'){
+        (codigo == '111301')?
           htCtrl.hojaTrabActiVerd(hTFin,'fin', nombre, codfin, n):
           htCtrl.hojaTrabActifals(hTFin,'fin',nombre, codfin);
-      }else if(cuentas[i].saldo=='pasivo'){
+      }else if(saldo=='pasivo'){
         htCtrl.hojaTrabPasi(hTFin,'fin',nombre,codfin);
-      }else if(cuentas[i].saldo == 'perdida'){
-        if(cuentas[i].codigo === '220001'){
+      }else if(saldo == 'perdida'){
+        if(codigo === '220001'){
         }else{
           htCtrl.hojaTrabPerd(hTFin, 'fin', nombre, codfin);
         };
-      }else if(cuentas[i].saldo=='ganancia'){
-        if(cuentas[i].codigo==='220005'){
+      }else if(saldo=='ganancia'){
+        if(codigo==='220005'){
           if(!parseFloat(n['111301fin'])){
             htCtrl.hojaTrabGanaVerd(hTFin, 'fin', nombre, codfin);
           };
@@ -235,6 +237,64 @@ htCtrl.hojadetrabajo=(n, hTIni, hTFin)=>{
       ):
       tabla3=false;
 
+  };
+};
+
+/* htCtrl.cod=(a, b, c, d, e, f, g, h)
+ * @param array  a: hoja de trabajo
+ * @param string b: Texto
+ * @param number c: Debe
+ * @param number d: Haber
+ * @param number e: Activo
+ * @param number f: Pasivo
+ * @param number g: Perdidas
+ * @param number h: Ganancias
+ */
+htCtrl.cod=(a, b, c, d, e, f, g, h)=>{
+  if(codini){ //si existe
+    if(cuentas[i].saldo == 'activo'){ //si es activo
+      /** este es un ternario que debera
+       *   ser modificado en otras
+       *   versiones por un if
+       * su funcion es separar las cuentas
+       *   de inventarios ya que el
+       *   tratamiento de estas cuentas es
+       *   diferente en la hoja de trabajo
+       * ver nota 1
+       */
+       (cuentas[i].codigo == '111301')?
+        htCtrl.hojaTrabActiVerd(hTIni,'ini',nombre, codini, n):
+        htCtrl.hojaTrabActifals(hTIni,'ini', nombre, codini);
+    }else if(cuentas[i].saldo == 'pasivo'){ //si es pasivo
+      htCtrl.hojaTrabPasi(hTIni, 'ini', nombre, codini);
+    }else if(cuentas[i].saldo == 'perdida'){ //si es perdida
+      /*
+       * si es la cuenta 220001 no hase nada
+       *   ya que es el inventario inicial
+       *   de mercaderias
+       *   de lo contrario agrega la cuenta
+       *   al arreglo
+       *   ver nota 1
+      */
+      if(cuentas[i].codigo === '220001'){
+
+      }else{
+        htCtrl.hojaTrabPerd( hTIni,'ini',nombre,codini);
+      };
+    }else if(cuentas[i].saldo == 'ganancia'){ // si es ganancia
+      /*
+       * si existe el inventario final y no
+       * el inicial en contrario
+       * ver nota 1
+       */
+      if(cuentas[i].codigo === '220005'){
+        if(!parseFloat(n['111301ini'])){
+          htCtrl.hojaTrabGanaVerd( hTIni, 'ini', nombre, codini)
+        };
+      }else{
+        htCtrl.hojaTrabGanaFals(hTIni,'ini',nombre,codini);
+      };
+    };
   };
 };
 

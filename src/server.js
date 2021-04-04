@@ -1,3 +1,8 @@
+/**
+ * Mi servidor - Lea mas {@tutorial servidor-tutorial}
+ * @module Servidor
+ */
+
 const express        = require('express');
 const exphbs         = require('express-handlebars');
 const path           = require('path');
@@ -7,6 +12,10 @@ const flash          = require('connect-flash');
 const passport       = require('passport');
 
 // Inicialisacion
+/**
+ * app constante
+ * @const {object}
+ */
 const app = express();
 require('./config/passport');
 

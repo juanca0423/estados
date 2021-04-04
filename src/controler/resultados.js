@@ -13,15 +13,15 @@ let fg = new MoneyFormating();
 const reCtrl = {};
 
 /*reCtrl.resuCuenObje=(a, b, c, d, e, f, g, h, i)=>{
- * @params array  a: almacena los datos
- * @parans string b: columna 1 nombre
- * @params number c: valor columna 2 col1
- * @oarams number d: valor columna 3 col2
- * @params number e: valor columna 4 col3
- * @params string f: clase del nombre
- * @params string g: clase de col1
- * @params string h: clase de col2
- * @params string i: clase de col3
+ * @params {array}  a: almacena los datos
+ * @parans {string} b: columna 1 nombre
+ * @params {number} c: valor columna 2 col1
+ * @oarams {number} d: valor columna 3 col2
+ * @params {number} e: valor columna 4 col3
+ * @params {string} f: clase del nombre
+ * @params {string} g: clase de col1
+ * @params {string} h: clase de col2
+ * @params {string} i: clase de col3
 */
 reCtrl.resuCuenObje = (a, b, c, d, e, f, g, h, i)=>{
   a.push({
@@ -37,9 +37,9 @@ reCtrl.resuCuenObje = (a, b, c, d, e, f, g, h, i)=>{
 };
 
 /*reCtrl.resultados = (n, a, b)=>{
- * @params arrray n:
- * @params arrray a: estado de resultados ini
- * @params arrray b: estado de resultados fin
+ * @params {array} n:
+ * @params {array} a: estado de resultados ini
+ * @params {array} b: estado de resultados fin
 */
 reCtrl.resultados = (n, a, b)=>{
   /* variables
@@ -261,21 +261,21 @@ reCtrl.resultados = (n, a, b)=>{
 };
 
 /*reCtrl.resuBloq = (a, b, c, d, e, f, g, h)=>{
- * @params array  a: tabla de contenido
- * @params array  b: estado de resultados
- * @params string c: indice 'ini' o 'fin'
- * @params string d: subtitulo
- * @params string e: subsubtitulo
- * @params string f: 'uno' 'dos' 'tres' 'cuatro'
+ * @params {array}  a: tabla de contenido
+ * @params {array}  b: estado de resultados
+ * @params {string} c: indice 'ini' o 'fin'
+ * @params {string} d: subtitulo
+ * @params {string} e: subsubtitulo
+ * @params {string} f: 'uno' 'dos' 'tres' 'cuatro'
  *   'cinco' 'seis'
- * @params array g: acumulador
- * @params array h: saldo anterior
- * @params array n: datos del formulario
+ * @params {array} g: acumulador
+ * @params {array} h: saldo anterior
+ * @params {array} n: datos del formulario
 */
 reCtrl.resuBloq = (a, b, c, d, e, f, g, h, n)=>{
   /* variables acumulativas
-   * @var numerica acumulador: acumula el valor
-   * @var array tablTemp: se almacenaran
+   * @let {number} acumulador: acumula el valor
+   * @let {array} tablTemp: se almacenaran
    *   los valores de n
   */
   let acumulador=0;
@@ -300,8 +300,8 @@ reCtrl.resuBloq = (a, b, c, d, e, f, g, h, n)=>{
 
   for(let i=0;i<=(tablTemp.length-1);i++){
     let val = tablTemp[i].valor;
-    let cur = fg.moneyToCurrency(val.toFixed(2)),
-    let cod=parseFloat(val);
+    let cur = fg.moneyToCurrency(val.toFixed(2));
+    let cod = parseFloat(val);
     let nombre=tablTemp[i].nombre;
     if(tablTemp.length==1){// si la  tabla temporal es uno
       if(f == 'uno'||f == 'tres'||f == 'cinco'){
@@ -595,12 +595,12 @@ reCtrl.resuBloq = (a, b, c, d, e, f, g, h, n)=>{
 };
 
 /*reCtrl.titulo=(a, b, c, d, e, f)=>{
- * @params array  a: estado de resultados
- * @params string b: subtitulo
- * @params string c: subsubtitulo
- * @params string d: nombre
- * @params string e: currency
- * @params number f: acumulado
+ * @params {array}  a: estado de resultados
+ * @params {string} b: subtitulo
+ * @params {string} c: subsubtitulo
+ * @params {string} d: nombre
+ * @params {string} e: currency
+ * @params {number} f: acumulado
 */
 reCtrl.titulo1 = (a, b, c, d, e, f)=>{
   reCtrl.resuCuenObje(
@@ -623,12 +623,12 @@ reCtrl.titulo1 = (a, b, c, d, e, f)=>{
 };
 
 /*-reCtrl.titulo2 = (a, b, c, d, e, f)=>{
- * @params array  a: estado de resultados
- * @params number b: subtotal
- * @params string c: subsubtitulo
- * @params string d: nombre
- * @params string e: currency
- * @params number f: acumulado
+ * @params {array}  a: estado de resultados
+ * @params {number} b: subtotal
+ * @params {string} c: subsubtitulo
+ * @params {string} d: nombre
+ * @params {string} e: currency
+ * @params {number} f: acumulado
 */
 reCtrl.titulo2 = (a, b, c, d, e, f)=>{
   resuCuenObje(

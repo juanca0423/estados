@@ -7,3 +7,5 @@ package-lock.json
 # environment variables
 .env
 src/public/svg/
+# doc
+doc/
